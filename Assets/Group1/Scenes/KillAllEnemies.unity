@@ -254,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8459613
+      value: 3.56
       objectReference: {fileID: 0}
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8857462
+      value: -5.41
       objectReference: {fileID: 0}
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
@@ -661,12 +661,12 @@ PrefabInstance:
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7542539
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05596131
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
@@ -730,7 +730,7 @@ PrefabInstance:
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.614254
+      value: 6.95
       objectReference: {fileID: 0}
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
@@ -901,6 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 6
+  _player: {fileID: 1761935014}
 --- !u!135 &1761935013
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -926,6 +927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9f9fe2b64b4784fac5b2a6766614c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1761935015
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -962,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8840387
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 2491297344866194446, guid: 6b62ee2dca676644ea993d313604bc0f,
         type: 3}
