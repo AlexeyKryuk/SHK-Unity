@@ -6,16 +6,12 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private Player _player;
 
+    private int _boostMultiplier = 2;
+    private float _boostDuration = 2f;
+
     private void OnEnable()
     {
-        _player.Damaged.AddListener((multiplier, delay) =>
-            StartCoroutine(DecreaseSpeed(multiplier, delay)));
-    }
-
-    private void OnDisable()
-    {
-        _player.Damaged.RemoveListener((multiplier, delay) => 
-            StartCoroutine(DecreaseSpeed(multiplier, delay)));
+        _player.EnemyKilled += () => StartCoroutine(SpeedBoost());
     }
 
     private void Update()
@@ -33,14 +29,10 @@ public class Movement : MonoBehaviour
         transform.Translate(movement.normalized * _speed * Time.deltaTime);
     }
 
-    private IEnumerator DecreaseSpeed(int multiplier, float delay)
+    private IEnumerator SpeedBoost()
     {
-        float targetSpeed = _speed / multiplier;
-
-        while (_speed - targetSpeed > float.Epsilon)
-        {
-            _speed = Mathf.Lerp(_speed, targetSpeed, delay * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
+        _speed *= _boostMultiplier;
+        yield return new WaitForSeconds(_boostDuration);
+        _speed /= _boostMultiplier;
     }
 }

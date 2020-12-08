@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameOverChecker : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _windowOfLosing;
     [SerializeField] private Enemy[] _enemies;
 
-    private int _counterKilledEnemies;
+    private int _killedEnemies;
 
     private void OnEnable()
     {
@@ -27,9 +27,9 @@ public class GameOverChecker : MonoBehaviour
 
     private void OnEnemyDied()
     {
-        _counterKilledEnemies++;
+        _killedEnemies++;
 
-        if (_counterKilledEnemies == _enemies.Length)
+        if (_killedEnemies == _enemies.Length)
         {
             FinishGame();
         }
@@ -37,6 +37,6 @@ public class GameOverChecker : MonoBehaviour
 
     private void FinishGame()
     {
-        _spriteRenderer.enabled = true;
+        _windowOfLosing.enabled = true;
     }
 }
